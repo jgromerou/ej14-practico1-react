@@ -16,6 +16,11 @@ h3 {
   line-height: 1.2;
 }
 
-.paginaPrincipal {
+.mainSection {
   flex-grow: 1;
+}
+.error404 {
+  object-fit: cover;
+  height: 600px;
+  width: 40%;
 }
