@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap');
+
+#root {
+  background-image: linear-gradient(111.4deg, #5f545c 6.5%, #5f545c 93.2%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #f5e2b8;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.paginaPrincipal {
+  flex-grow: 1;
+}
