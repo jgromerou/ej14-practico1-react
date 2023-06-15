@@ -21,6 +21,10 @@ estas deben estar almacenadas en el localstorage o json-server.
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Markdown](https://markdown.es/)
 
+## Comando para ejecutar json-server
+
+json-server --watch db.json --port 3004
+
 ## Pasos para clonar y ejecutar la Aplicación 🖥
 
 Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
