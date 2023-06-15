@@ -1,7 +1,17 @@
-import { Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Container, Row, Col, Table } from 'react-bootstrap';
 import Sidebar from '../common/Sidebar';
+import { obtenerListaProductos } from '../helpers/queries';
+import { useState, useEffect } from 'react';
+import ItemReceta from './receta/ItemReceta';
 
 const Administrador = () => {
+  const [recetas, setRecetas] = useState([]);
+
+  useEffect(() => {
+    obtenerListaProductos().then((respuesta) => {
+      setRecetas(respuesta);
+    });
+  }, []);
   return (
     <Container className="mainSection  my-3">
       <Row className="g-3 mb-3">
@@ -31,24 +41,9 @@ const Administrador = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td className="tamanioCelda text-truncate">
-                      Tarta de fresas y albahaca
-                    </td>
-                    <td className="tamanioCelda text-truncate">
-                      https://cdn.shopify.com/s/files/1/0191/9978/files/1_5f502ef5-6c01-4694-b1ed-be0fb7ff2904.jpg?v=1686237776
-                    </td>
-                    <td>Dulce</td>
-                    <td className="tamanioCeldaOpciones text-center">
-                      <Button className="btn btn-warning my-2 my-lg-0 me-lg-2">
-                        <i className="bi bi-pencil p-1"></i>
-                      </Button>
-                      <Button variant="danger">
-                        <i className="bi bi-x-lg p-1"></i>
-                      </Button>
-                    </td>
-                  </tr>
+                  {recetas.map((receta) => (
+                    <ItemReceta key={receta.id} receta={receta}></ItemReceta>
+                  ))}
                 </tbody>
               </Table>
             </section>

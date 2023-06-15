@@ -28,6 +28,9 @@ h3 {
 .tamanioCelda {
   max-width: 2rem;
 }
+.tamanioCeldaFijo {
+  width: 1rem;
+}
 .tamanioCeldaOpciones {
-  max-width: 2px;
+  max-width: 1rem;
 }
