@@ -34,3 +34,26 @@ h3 {
 .tamanioCeldaOpciones {
   max-width: 1rem;
 }
+
+.altoDeArea {
+  height: 6rem;
+}
+
+.btn {
+  font-weight: 700;
+  display: block;
+  color: #fff;
+  transition: 0.3s ease-out;
+  text-align: center;
+  width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .altoDeArea {
+    height: 10rem;
+  }
+  .btn {
+    width: auto;
+    padding: 1rem;
+  }
+}
