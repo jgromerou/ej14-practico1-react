@@ -4,9 +4,8 @@ const Sidebar = () => {
     <>
       <Col md={3}>
         <aside className="flex-grow-aside">
-          <h3 className="fw-bold mb-3">Hola: usuario</h3>
-
-          <Button variant="primary" className="w-100 d-sm-block">
+          <h3 className="fw-bold mb-3 mt-2">Hola: usuario</h3>
+          <Button variant="primary" className="w-100 d-sm-block mt-1">
             Nuevo Blog
           </Button>
         </aside>
