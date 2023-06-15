@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 
-const ItemBlog = ({ receta }) => {
+const ItemReceta = ({ receta }) => {
   return (
     <tr>
       <td className="tamanioCeldaFijo">{receta.id}</td>
@@ -19,4 +19,4 @@ const ItemBlog = ({ receta }) => {
   );
 };
 
-export default ItemBlog;
+export default ItemReceta;

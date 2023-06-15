@@ -2,7 +2,7 @@ import { Container, Row, Col, Table } from 'react-bootstrap';
 import Sidebar from '../common/Sidebar';
 import { obtenerListaProductos } from '../helpers/queries';
 import { useState, useEffect } from 'react';
-import ItemBlog from './blog/ItemBlog';
+import ItemReceta from './receta/ItemReceta';
 
 const Administrador = () => {
   const [recetas, setRecetas] = useState([]);
@@ -42,7 +42,7 @@ const Administrador = () => {
                 </thead>
                 <tbody>
                   {recetas.map((receta) => (
-                    <ItemBlog key={receta.id} receta={receta}></ItemBlog>
+                    <ItemReceta key={receta.id} receta={receta}></ItemReceta>
                   ))}
                 </tbody>
               </Table>

@@ -6,8 +6,8 @@ import Footer from './components/common/Footer';
 import Administrador from './components/views/Administrador';
 // import Error404 from './components/views/Error404';
 
-// import CrearBlog from './components/views/blog/CrearBlog';
-// import EditarBlog from './components/views/blog/EditarBlog';
+// import CrearReceta from './components/views/receta/CrearReceta';
+// import EditarReceta from './components/views/receta/EditarReceta';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       {/* <Inicio></Inicio> */}
       <Administrador></Administrador>
       {/* <Error404></Error404> */}
-      {/* <CrearBlog></CrearBlog> */}
-      {/* <EditarBlog></EditarBlog> */}
+      {/* <CrearReceta></CrearReceta> */}
+      {/* <EditarReceta></EditarReceta> */}
       <Footer></Footer>
     </>
   );
