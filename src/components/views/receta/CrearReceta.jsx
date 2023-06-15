@@ -1,6 +1,8 @@
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import Sidebar from '../../common/Sidebar';
 import { useForm } from 'react-hook-form';
+import { consultaAgregarReceta } from '../../helpers/queries';
+import Swal from 'sweetalert2';
 
 const CrearReceta = () => {
   const tituloBoton = 'Volver';
@@ -13,7 +15,23 @@ const CrearReceta = () => {
   } = useForm();
 
   const onSubmit = (recetaNueva) => {
-    console.log(recetaNueva);
+    consultaAgregarReceta(recetaNueva).then((respuestaCreado) => {
+      console.log(respuestaCreado);
+      if (respuestaCreado && respuestaCreado.status === 201) {
+        Swal.fire(
+          'Receta creada',
+          `La receta ${recetaNueva.nombreReceta} fue creada correctamente`,
+          'success'
+        );
+        reset();
+      } else {
+        Swal.fire(
+          'Ocurrio un error',
+          `La receta ${recetaNueva.nombreReceta} no fue creada, intentelo mas tarde`,
+          'error'
+        );
+      }
+    });
   };
 
   return (
