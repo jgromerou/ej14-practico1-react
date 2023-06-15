@@ -1,6 +1,7 @@
 {
   "recetas": [
     {
+      "id": 1,
       "nombreReceta": "Tarta de fresas y albahaca",
       "descripcionReceta": "Combinar fresas y albahaca, ¿no te parece un acierto maravilloso? Por si te queda alguna duda, la receta de hoy las disipará todas con solo dar un mordisco a la maravillosa tarta de fresas y albahaca que hoy te muestro. Una tarta con mucho sabor y llena de aromas frescos y primaverales, perfecta para servir en cualquier momento del día.",
       "ingredientes": "150 g de mantequilla cortada en dados, 100 g de azúcar glas, 60 g de harina de almendra (almendras molidas muy finamente), 1 huevo, 1 pizca de sal, 250 g de harina",
@@ -9,6 +10,7 @@
       "categoria": "dulce"
     },
     {
+      "id": 2,
       "nombreReceta": "Pulpo en tempura con alioli de wasabi y cilantro",
       "descripcionReceta": "¡Llega el calor y es el momento perfecto para disfrutar de deliciosas tapas y sabores refrescantes! Toma nota de esta irresistible receta de Pulpo en tempura con alioli de wasabi y cilantro, porque es una opción ideal para compartir y disfrutar en los cálidos días de verano.",
       "ingredientes": "1 pulpo (aprox. 1,2 kg, previamente congelado y descongelado*), Sal, 100 ml de vermut blanco, 1 paquete de harina de tempura (harina para freír), 1 hoja de laurel, Sal marina en escamas",
