@@ -1,7 +1,16 @@
 import { Container, Row, Col, Table, Button } from 'react-bootstrap';
 import Sidebar from '../common/Sidebar';
+import { obtenerListaProductos } from '../helpers/queries';
+import { useState, useEffect } from 'react';
 
 const Administrador = () => {
+  const [recetas, setRecetas] = useState([]);
+
+  useEffect(() => {
+    obtenerListaProductos().then((respuesta) => {
+      setRecetas(respuesta);
+    });
+  }, []);
   return (
     <Container className="mainSection  my-3">
       <Row className="g-3 mb-3">
