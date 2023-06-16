@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Menu></Menu>
+        <Menu></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio />}></Route>
           <Route
@@ -32,7 +32,7 @@ function App() {
             path="/administrador/editar-receta"
             element={<EditarReceta />}
           ></Route>
-          <Route exact path="*" element={<Error404 />}></Route>
+          <Route exact path="/*" element={<Error404 />}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
