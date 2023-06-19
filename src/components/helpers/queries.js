@@ -1,6 +1,6 @@
 const URLRecetas = import.meta.env.VITE_API_RECETAS;
 
-export const obtenerListaProductos = async () => {
+export const obtenerListaRecetas = async () => {
   try {
     const respuesta = await fetch(URLRecetas);
     const listaRecetas = await respuesta.json();
