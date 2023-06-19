@@ -39,7 +39,7 @@ h3 {
   height: 6rem;
 }
 
-.btn {
+.btnBlock {
   font-weight: 700;
   display: block;
   color: #fff;
@@ -48,9 +48,9 @@ h3 {
   width: 100%;
 }
 
-.imgbanner{
-width: 100%;
-  
+.imgbanner {
+  width: 100%;
+
   margin: 0 auto;
   text-align: center;
 }

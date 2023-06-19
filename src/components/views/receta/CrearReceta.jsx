@@ -188,7 +188,11 @@ const CrearReceta = () => {
                   </Alert>
                 )}
               </Form.Group>
-              <Button variant="primary" type="submit" className="mt-1 mb-3">
+              <Button
+                variant="primary"
+                type="submit"
+                className="mt-1 mb-3 btnBlock"
+              >
                 Guardar
               </Button>
             </Form>
