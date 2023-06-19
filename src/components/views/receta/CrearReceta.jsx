@@ -2,17 +2,18 @@ import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import Sidebar from '../../common/Sidebar';
 import { useForm } from 'react-hook-form';
 import { consultaAgregarReceta } from '../../helpers/queries';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CrearReceta = () => {
-  const tituloBoton = 'Volver';
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+
+  const navegacion = useNavigate();
 
   const onSubmit = (recetaNueva) => {
     consultaAgregarReceta(recetaNueva).then((respuestaCreado) => {
@@ -24,6 +25,7 @@ const CrearReceta = () => {
           'success'
         );
         reset();
+        navegacion('/administrador');
       } else {
         Swal.fire(
           'Ocurrio un error',
@@ -37,7 +39,7 @@ const CrearReceta = () => {
   return (
     <Container className="mainSection  my-3">
       <Row className="g-3 mb-3">
-        <Sidebar tituloBoton={tituloBoton} />
+        <Sidebar />
         <Col md={9}>
           <aside className="flex-grow-aside text-light">
             <hr />
