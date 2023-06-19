@@ -1,4 +1,5 @@
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ItemReceta = ({ receta }) => {
   return (
@@ -8,9 +9,12 @@ const ItemReceta = ({ receta }) => {
       <td className="tamanioCelda text-truncate">{receta.imagen}</td>
       <td className="tamanioCeldaFijo">{receta.categoria}</td>
       <td className="tamanioCeldaOpciones text-center">
-        <Button className="btn btn-warning my-2 my-lg-0 me-lg-2">
+        <Link
+          className="btn btn-warning my-2 my-lg-0 me-lg-2"
+          to={"/administrador/editar-receta" + receta.id}
+        >
           <i className="bi bi-pencil p-1"></i>
-        </Button>
+        </Link>
         <Button variant="danger">
           <i className="bi bi-x-lg p-1"></i>
         </Button>
