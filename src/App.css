@@ -48,6 +48,13 @@ h3 {
   width: 100%;
 }
 
+.imgbanner{
+width: 100%;
+  
+  margin: 0 auto;
+  text-align: center;
+}
+
 @media all and (min-width: 768px) {
   .altoDeArea {
     height: 10rem;
