@@ -26,24 +26,6 @@
       "imagen": "https://cdn.shopify.com/s/files/1/0191/9978/files/1_5f502ef5-6c01-4694-b1ed-be0fb7ff2904.jpg?v=1686237776",
       "categoria": "Apto para Celíacos",
       "id": 3
-    },
-    {
-      "nombreReceta": "prueba 46",
-      "descripcionReceta": "fesfe",
-      "ingredientes": "fesfe",
-      "instrucciones": "fesfe",
-      "imagen": "https://images.pexels.com/photos/14770630/pexels-photo-14770630.jpeg",
-      "categoria": "Salado",
-      "id": 4
-    },
-    {
-      "nombreReceta": "prueba 46",
-      "descripcionReceta": "fesfesf",
-      "ingredientes": "fesfe",
-      "instrucciones": "fesfesf",
-      "imagen": "https://images.pexels.com/photos/14770630/pexels-photo-14770630.jpeg",
-      "categoria": "Dulce",
-      "id": 5
     }
   ],
   "usuarios": [

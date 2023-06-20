@@ -13,9 +13,9 @@ export const obtenerListaRecetas = async () => {
 export const consultaAgregarReceta = async (receta) => {
   try {
     const respuesta = await fetch(URLRecetas, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(receta),
     });
@@ -27,12 +27,23 @@ export const consultaAgregarReceta = async (receta) => {
 
 export const consultaEditarReceta = async (receta, id) => {
   try {
-    const respuesta = await fetch(URLRecetas + "/" + id, {
-      method: "PUT",
+    const respuesta = await fetch(URLRecetas + '/' + id, {
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(receta),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const consultaBorrarReceta = async (id) => {
+  try {
+    const respuesta = await fetch(`${URLRecetas}/${id}`, {
+      method: 'DELETE',
     });
     return respuesta;
   } catch (error) {
