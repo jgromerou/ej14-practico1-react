@@ -3,36 +3,48 @@ import "./App.css";
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/views/Inicio";
-import Administrador from "./components/views/Administrador";
+import Registro from "./components/views/Registro";
 import Error404 from "./components/views/Error404";
+import Login from "./components/views/Login";
+import DetalleReceta from "./components/views/DetalleReceta";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import CrearReceta from "./components/views/receta/CrearReceta";
-import EditarReceta from "./components/views/receta/EditarReceta";
+import RutasPrivadas from "./components/routes/RutasPrivadas";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
+import { useState } from "react";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu
+          usuarioLogueado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        ></Menu>
         <Routes>
-          <Route exact path="/" element={<Inicio />}></Route>
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route
             exact
-            path="/administrador"
-            element={<Administrador />}
+            path="/login"
+            element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
           ></Route>
           <Route
             exact
-            path="/administrador/crear-receta"
-            element={<CrearReceta />}
+            path="/detalle"
+            element={<DetalleReceta></DetalleReceta>}
           ></Route>
           <Route
-            exact
-            path="/administrador/editar-receta"
-            element={<EditarReceta />}
+            path="/administrador/*"
+            element={
+              <RutasPrivadas>
+                <RutasAdministrador></RutasAdministrador>
+              </RutasPrivadas>
+            }
           ></Route>
-          <Route exact path="/*" element={<Error404 />}></Route>
+
+          <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
