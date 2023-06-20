@@ -6,6 +6,8 @@ import Inicio from "./components/views/Inicio";
 import Administrador from "./components/views/Administrador";
 import Error404 from "./components/views/Error404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RutasPrivadas from "./components/routes/RutasPrivadas";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
 
 import CrearReceta from "./components/views/receta/CrearReceta";
 import EditarReceta from "./components/views/receta/EditarReceta";
