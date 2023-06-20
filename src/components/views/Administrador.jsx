@@ -1,6 +1,6 @@
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import Sidebar from '../common/Sidebar';
-import { obtenerListaProductos } from '../helpers/queries';
+import { obtenerListaRecetas } from '../helpers/queries';
 import { useState, useEffect } from 'react';
 import ItemReceta from './receta/ItemReceta';
 
@@ -8,7 +8,7 @@ const Administrador = () => {
   const [recetas, setRecetas] = useState([]);
 
   useEffect(() => {
-    obtenerListaProductos().then((respuesta) => {
+    obtenerListaRecetas().then((respuesta) => {
       setRecetas(respuesta);
     });
   }, []);
@@ -42,7 +42,11 @@ const Administrador = () => {
                 </thead>
                 <tbody>
                   {recetas.map((receta) => (
-                    <ItemReceta key={receta.id} receta={receta}></ItemReceta>
+                    <ItemReceta
+                      key={receta.id}
+                      receta={receta}
+                      setRecetas={setRecetas}
+                    ></ItemReceta>
                   ))}
                 </tbody>
               </Table>
