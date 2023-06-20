@@ -3,41 +3,35 @@ import "./App.css";
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/views/Inicio";
-import Administrador from "./components/views/Administrador";
+import Registro from "./components/views/Registro";
 import Error404 from "./components/views/Error404";
+import Login from "./components/views/Login";
+import DetalleReceta from "./components/views/DetalleReceta";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RutasPrivadas from "./components/routes/RutasPrivadas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 
-import CrearReceta from "./components/views/receta/CrearReceta";
-import EditarReceta from "./components/views/receta/EditarReceta";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu></Menu>
-        <Routes>
-          <Route exact path="/" element={<Inicio />}></Route>
-          <Route
-            exact
-            path="/administrador"
-            element={<Administrador />}
-          ></Route>
-          <Route
-            exact
-            path="/administrador/crear-receta"
-            element={<CrearReceta />}
-          ></Route>
-          <Route
-            exact
-            path="/administrador/editar-receta"
-            element={<EditarReceta />}
-          ></Route>
-          <Route exact path="/*" element={<Error404 />}></Route>
-        </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
+    <Menu></Menu>
+      <Routes>
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        <Route exact path="/registro" element={<Registro></Registro>}></Route>
+        <Route exact path="/login" element={<Login></Login>}></Route>
+        <Route exact path="/detalle" element={<DetalleReceta></DetalleReceta>}></Route>
+        <Route path="/administrador/*" element={
+          <RutasPrivadas>
+            <RutasAdministrador></RutasAdministrador>
+          </RutasPrivadas>
+        }></Route>
+        
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
     </>
   );
 }
