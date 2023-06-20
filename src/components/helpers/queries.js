@@ -38,6 +38,17 @@ export const obtenerListaRecetas = async () => {
   }
 };
 
+export const consultaReceta = async (id) =>{
+  try{
+      const respuesta = await fetch(URLRecetas+'/'+id);
+      const receta = await respuesta.json();
+      return receta;
+  }catch(error){
+      console.log(error);
+  }
+}
+
+
 export const consultaAgregarReceta = async (receta) => {
   try {
     const respuesta = await fetch(URLRecetas, {

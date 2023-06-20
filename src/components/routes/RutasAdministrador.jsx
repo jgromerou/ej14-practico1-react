@@ -3,16 +3,11 @@ import Administrador from "../views/Administrador";
 import CrearReceta from "../views/receta/CrearReceta";
 import EditarReceta from "../views/receta/EditarReceta";
 
-
 const RutasAdministrador = () => {
   return (
     <>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={<Administrador></Administrador>}
-        ></Route>
+        <Route exact path="/" element={<Administrador></Administrador>}></Route>
         <Route
           exact
           path="/crear-receta"
@@ -20,7 +15,7 @@ const RutasAdministrador = () => {
         ></Route>
         <Route
           exact
-          path="/editar-receta"
+          path="/editar-producto/:id"
           element={<EditarReceta></EditarReceta>}
         ></Route>
       </Routes>

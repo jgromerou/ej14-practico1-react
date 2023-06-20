@@ -1,16 +1,40 @@
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import Sidebar from "../../common/Sidebar";
 import { useForm } from "react-hook-form";
+import { consultaReceta } from "../../helpers/queries";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditarReceta = () => {
-  const tituloBoton = "Volver";
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    consultaReceta(id).then((respuesta) => {
+      if (respuesta) {
+        console.log("tengo que cargar el objeto en el formulario");
+        console.log(respuesta);
+        setValue("nombreReceta", respuesta.nombreReceta);
+        setValue("descripcionReceta", respuesta.descripcionReceta);
+        setValue("ingredientes", respuesta.ingredientes);
+        setValue("instrucciones", respuesta.instrucciones);
+        setValue("imagen", respuesta.imagen);
+        setValue("categoria", respuesta.categoria);
+      } else {
+        Swal.fire(
+          "Ocurrio un error",
+          `No se puede editar la receta, intentelo mas tarde`,
+          "error"
+        );
+      }
+    });
+  }, []);
 
   const onSubmit = (recetaNueva) => {
     console.log(recetaNueva);
@@ -19,7 +43,7 @@ const EditarReceta = () => {
   return (
     <Container className="mainSection  my-3">
       <Row className="g-3 mb-3">
-        <Sidebar tituloBoton={tituloBoton} />
+        <Sidebar />
         <Col md={9}>
           <aside className="flex-grow-aside text-light">
             <hr />

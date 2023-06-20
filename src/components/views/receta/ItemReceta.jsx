@@ -52,10 +52,11 @@ const ItemReceta = ({ receta, setRecetas }) => {
       <td className="tamanioCeldaOpciones text-center">
         <Link
           className="btn btn-warning my-2 my-lg-0 me-lg-2"
-          to={'/administrador/editar-receta' + receta.id}
+          to={'/administrador/editar-receta/' + receta.id}
         >
           <i className="bi bi-pencil p-1"></i>
         </Link>
+
         <Button variant="danger" onClick={() => borrarReceta()}>
           <i className="bi bi-x-lg p-1"></i>
         </Button>
