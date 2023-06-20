@@ -34,6 +34,24 @@
       "nombreUsuario": "admin",
       "email": "admin@rollingcode.com",
       "password": "123456aA"
+    },
+    {
+      "nombreUsuario": "prueba",
+      "email": "correo@correo.com",
+      "password": "123456aA",
+      "id": 2
+    },
+    {
+      "nombreUsuario": "pruebados",
+      "email": "correo@correo.com",
+      "password": "123456aA",
+      "id": 3
+    },
+    {
+      "nombreUsuario": "pruebaTres",
+      "email": "prueba@prueba.com",
+      "password": "123456aA",
+      "id": 4
     }
   ]
 }
