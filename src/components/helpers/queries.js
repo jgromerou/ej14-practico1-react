@@ -1,32 +1,45 @@
 const URLRecetas = import.meta.env.VITE_API_RECETAS;
 const URLUsuarios = import.meta.env.VITE_API_USUARIOS;
 
-export const login = async(usuario)=>{
-    try{
-        const respuesta = await fetch(URLUsuarios);
-        const listaUsuarios = await respuesta.json();
-        //buscar cual usuario tiene el mail
-        const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
-        if(usuarioBuscado){
-            console.log('email encontrado');
-            if(usuarioBuscado.password === usuario.password){
-                return usuarioBuscado;
-            }else{
-                console.log('el password es incorrecto');
-                return null;
-            }
-        }else{
-            console.log('el email no existe');
-            return null
-        }       
-    }catch(error){
-        console.log(error)
+export const login = async (usuario) => {
+  try {
+    const respuesta = await fetch(URLUsuarios);
+    const listaUsuarios = await respuesta.json();
+    //buscar cual usuario tiene el mail
+    const usuarioBuscado = listaUsuarios.find(
+      (itemUsuario) => itemUsuario.email === usuario.email
+    );
+    if (usuarioBuscado) {
+      console.log('email encontrado');
+      if (usuarioBuscado.password === usuario.password) {
+        return usuarioBuscado;
+      } else {
+        console.log('el password es incorrecto');
+        return null;
+      }
+    } else {
+      console.log('el email no existe');
+      return null;
     }
-}
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-
-
-
+export const registrar = async (usuarioNuevo) => {
+  try {
+    const respuesta = await fetch(`${URLUsuarios}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(usuarioNuevo),
+    });
+    return respuesta.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const obtenerListaRecetas = async () => {
   try {
@@ -38,16 +51,15 @@ export const obtenerListaRecetas = async () => {
   }
 };
 
-export const consultaReceta = async (id) =>{
-  try{
-      const respuesta = await fetch(URLRecetas+'/'+id);
-      const receta = await respuesta.json();
-      return receta;
-  }catch(error){
-      console.log(error);
+export const consultaReceta = async (id) => {
+  try {
+    const respuesta = await fetch(URLRecetas + '/' + id);
+    const receta = await respuesta.json();
+    return receta;
+  } catch (error) {
+    console.log(error);
   }
-}
-
+};
 
 export const consultaAgregarReceta = async (receta) => {
   try {
