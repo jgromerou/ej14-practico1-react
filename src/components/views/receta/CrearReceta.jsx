@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { consultaAgregarReceta } from '../../helpers/queries';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const CrearReceta = () => {
   const {
@@ -42,9 +43,21 @@ const CrearReceta = () => {
         <Sidebar />
         <Col md={9}>
           <aside className="flex-grow-aside text-light">
-            <hr />
-            <h1 className="display-4 mt-3">Nueva Receta</h1>
-            <hr />
+            <Col>
+              <hr />
+              <h1 className="display-4 mt-3">Nueva Receta</h1>
+              <hr />
+            </Col>
+            <Row>
+              <Col className="d-flex justify-content-end">
+                <Link
+                  to="/administrador"
+                  className="btn btn-secondary d-sm-block mt-2 mb-3 btnBlock"
+                >
+                  Volver Atrás
+                </Link>
+              </Col>
+            </Row>
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="formNombreReceta">
                 <Form.Label>Nombre Receta*</Form.Label>
