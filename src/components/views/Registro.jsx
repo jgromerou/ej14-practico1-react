@@ -32,7 +32,7 @@ const Registro = () => {
   return (
     <div className="mt-5 mainSection">
       <h3 className="text-center">Registro</h3>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center mx-2">
         <div className="col-12 col-sm-8 col-md-6 col-xl-4">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-2">
@@ -86,9 +86,9 @@ const Registro = () => {
               </Form.Text>
             </Form.Group>
 
-            <div className="row">
+            <div className="row mx-0">
               <Button
-                className="btn btn-dark btn-lg btn-block mb-2"
+                className="btn btn-dark btn-lg btn-block mb-2 "
                 type="submit"
               >
                 Registrar
