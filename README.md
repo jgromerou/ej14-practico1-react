@@ -21,6 +21,15 @@ estas deben estar almacenadas en el localstorage o json-server.
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Markdown](https://markdown.es/)
 
+## Creamos el archivo .env y agregamos las siguientes 2 lineas
+
+VITE_API_USUARIOS=http://localhost:3004/usuarios
+VITE_API_RECETAS=http://localhost:3004/recetas
+
+## Comando para ejecutar json-server
+
+json-server --watch db.json --port 3004
+
 ## Pasos para clonar y ejecutar la Aplicación 🖥
 
 Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
