@@ -13,7 +13,6 @@ const Registro = () => {
   const navegacion = useNavigate();
   const onSubmit = (usuarioNuevo) => {
     registrar(usuarioNuevo).then((respuesta) => {
-      console.log(respuesta);
       if (respuesta) {
         Swal.fire(
           'Bienvenido',

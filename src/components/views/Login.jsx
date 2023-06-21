@@ -1,18 +1,21 @@
-import { Form, Button, Container, Card } from "react-bootstrap";
-import { login } from "../helpers/queries";
-import { useForm} from 'react-hook-form';
+import { Form, Button, Container, Card } from 'react-bootstrap';
+import { login } from '../helpers/queries';
+import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-
-const Login = ({setUsuarioLogueado}) => {
-  const { register, handleSubmit, formState: { errors}, reset } = useForm();
+const Login = ({ setUsuarioLogueado }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario)=>{
-    console.log(usuario)
-    login(usuario).then((respuesta)=>{
-      if(respuesta){
+  const onSubmit = (usuario) => {
+    login(usuario).then((respuesta) => {
+      if (respuesta) {
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         Swal.fire(
           'Bienvenido',
@@ -20,17 +23,12 @@ const Login = ({setUsuarioLogueado}) => {
           'success'
         );
         setUsuarioLogueado(respuesta);
-        //redireccionar
         navegacion('/administrador');
-      }else{
-        Swal.fire(
-          'Error',
-          'Email o password incorrecto ',
-          'error'
-        )
+      } else {
+        Swal.fire('Error', 'Email o password incorrecto ', 'error');
       }
-    })
-  }
+    });
+  };
 
   return (
     <Container className="mainSection">
@@ -43,17 +41,19 @@ const Login = ({setUsuarioLogueado}) => {
               <Form.Control
                 type="email"
                 placeholder="Ingrese un email"
-               {...register('email', {
-                required: 'El email es un dato obligatorio',
-                pattern:{
-                  value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                  message: 'El email debe cumplir con el formato mail@dominio.com'
-                }
-               })}
+                {...register('email', {
+                  required: 'El email es un dato obligatorio',
+                  pattern: {
+                    value:
+                      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                    message:
+                      'El email debe cumplir con el formato mail@dominio.com',
+                  },
+                })}
               />
-             <Form.Text className="text-danger">
-               {errors.email?.message}
-             </Form.Text>
+              <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
@@ -62,15 +62,16 @@ const Login = ({setUsuarioLogueado}) => {
                 placeholder="Password"
                 {...register('password', {
                   required: 'El password es un dato obligatorio',
-                  pattern:{
+                  pattern: {
                     value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-                    message: 'El password debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.'
-                  }
-                 })}
+                    message:
+                      'El password debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.',
+                  },
+                })}
               />
-             <Form.Text className="text-danger">
-               {errors.password?.message}
-             </Form.Text>
+              <Form.Text className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
               Ingresar

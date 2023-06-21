@@ -15,7 +15,6 @@ const DetalleReceta = () => {
   useEffect(() => {
     consultaReceta(id).then((respuesta) => {
       if (respuesta) {
-        console.log(respuesta);
         setNombreReceta(respuesta.nombreReceta);
         setDescripcionReceta(respuesta.descripcionReceta);
         setIngredientes(respuesta.ingredientes);
