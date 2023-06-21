@@ -1,4 +1,4 @@
-# Ejercicio 14 del TP1: Blog de recetas de cocina - React ![React Icon](./src/assets/react.svg)
+# Ejercicio 14 del TP1: Blog de recetas de cocinas - React ![React Icon](./src/assets/react.svg)
 
 ## Descripción
 
@@ -21,7 +21,7 @@ estas deben estar almacenadas en el localstorage o json-server.
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Markdown](https://markdown.es/)
 
-## Para entorno **Local**:
+## Para entorno **Local - Desarrollo**:
 
 creamos el archivo .env y agregamos las siguientes variables de entorno
 
@@ -69,7 +69,7 @@ Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
 
 5.  **Accede a la aplicación:** Abre tu navegador web y visita la siguiente URL: _http://localhost:5173_. La aplicación debería cargarse y estar lista para usar.
 
-## Autor
+## Autores
 
 1. Emilia Belén Ramos [github](https://github.com/emiliabelen)
 2. Juan Gerardo Romero Uro [github](https://github.com/jgromerou)
