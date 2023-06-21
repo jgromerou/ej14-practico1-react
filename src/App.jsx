@@ -1,19 +1,19 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Menu from "./components/common/Menu";
-import Footer from "./components/common/Footer";
-import Inicio from "./components/views/Inicio";
-import Registro from "./components/views/Registro";
-import Error404 from "./components/views/Error404";
-import Login from "./components/views/Login";
-import DetalleReceta from "./components/views/DetalleReceta";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RutasPrivadas from "./components/routes/RutasPrivadas";
-import RutasAdministrador from "./components/routes/RutasAdministrador";
-import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Menu from './components/common/Menu';
+import Footer from './components/common/Footer';
+import Inicio from './components/views/Inicio';
+import Registro from './components/views/Registro';
+import Error404 from './components/views/Error404';
+import Login from './components/views/Login';
+import DetalleReceta from './components/views/DetalleReceta';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import RutasPrivadas from './components/routes/RutasPrivadas';
+import RutasAdministrador from './components/routes/RutasAdministrador';
+import { useState } from 'react';
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
+  const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <>
@@ -32,7 +32,7 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/detalle"
+            path="/detalle/:id"
             element={<DetalleReceta></DetalleReceta>}
           ></Route>
           <Route
