@@ -8,7 +8,7 @@ estas deben estar almacenadas en el localstorage o json-server.
 
 ## Link Versión en Producción
 
-(Aún no se encuentra creado)
+[Netlify](https://ej14-react-apprecetas.netlify.app/)
 
 ## Tecnologias / Herramientas 🛠
 
@@ -21,12 +21,21 @@ estas deben estar almacenadas en el localstorage o json-server.
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Markdown](https://markdown.es/)
 
-## Creamos el archivo .env y agregamos las siguientes 2 lineas
+## Para entorno **Local**:
 
-VITE_API_USUARIOS=http://localhost:3004/usuarios
-VITE_API_RECETAS=http://localhost:3004/recetas
+creamos el archivo .env y agregamos las siguientes variables de entorno
 
-## Comando para ejecutar json-server
+- VITE_API_USUARIOS=http://localhost:3004/usuarios
+- VITE_API_RECETAS=http://localhost:3004/recetas
+
+## Para entorno de **Producción**:
+
+se agrega las siguienteas variables de entorno
+
+- VITE_API_USUARIOS=https://my-json-server.typicode.com/jgromerou/ej14-practico1-react/usuarios
+- VITE_API_RECETAS=https://my-json-server.typicode.com/jgromerou/ej14-practico1-react/recetas
+
+## Comando para ejecutar json-server local
 
 json-server --watch db.json --port 3004
 
