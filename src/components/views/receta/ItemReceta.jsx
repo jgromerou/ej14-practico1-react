@@ -21,7 +21,6 @@ const ItemReceta = ({ receta, setRecetas }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         consultaBorrarReceta(receta.id).then((respuesta) => {
-          console.log(respuesta);
           if (respuesta && respuesta.status === 200) {
             Swal.fire(
               'Receta eliminada',

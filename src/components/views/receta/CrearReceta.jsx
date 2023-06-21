@@ -18,7 +18,6 @@ const CrearReceta = () => {
 
   const onSubmit = (recetaNueva) => {
     consultaAgregarReceta(recetaNueva).then((respuestaCreado) => {
-      console.log(respuestaCreado);
       if (respuestaCreado && respuestaCreado.status === 201) {
         Swal.fire(
           'Receta creada',
